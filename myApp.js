@@ -36,6 +36,8 @@ app.get("/now", (req,res,next)=>{
     res.json({"time":req.time})
 });
 
+
+//ROUTE PARAMS
 // Build an echo server, mounted at the route GET /:word/echo. 
 // Respond with a JSON object, taking the structure {echo: word}. 
 // You can find the word to be repeated at req.params.word. 
@@ -46,6 +48,13 @@ app.get("/now", (req,res,next)=>{
 app.get("/:word/echo",(req,res)=>{
     const obj={"echo":req.params.word};
     res.json(obj);
+})
+
+//QUERY PARAMS
+
+app.route("/name").get((req,res)=>{
+    console.log(req.query.first+" "+req.query.last);
+    res.json({"name":`${req.query.first} ${req.query.last}`})
 })
 
 
