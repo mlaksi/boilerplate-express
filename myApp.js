@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 require('dotenv').config();
-let bodyParser=this.require("body-parser");
+let bodyParser=require("body-parser");
 
 //console.log("Hello World");
 
