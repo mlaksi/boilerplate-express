@@ -36,6 +36,17 @@ app.get("/now", (req,res,next)=>{
     res.json({"time":req.time})
 });
 
+// Build an echo server, mounted at the route GET /:word/echo. 
+// Respond with a JSON object, taking the structure {echo: word}. 
+// You can find the word to be repeated at req.params.word. 
+// You can test your route from your browser's address bar, v
+// isiting some matching routes, 
+// e.g. your-app-rootpath/freecodecamp/echo.
+
+app.get("/:word/echo",(req,res)=>{
+    const obj={"echo":req.params.word};
+    res.json(obj);
+})
 
 
 
